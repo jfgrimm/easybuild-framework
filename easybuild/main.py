@@ -472,7 +472,7 @@ def main(args=None, logfile=None, do_build=None, testing=False, modtool=None):
             ordered_ecs = resolve_dependencies(easyconfigs, modtool)
         else:
             ordered_ecs = easyconfigs
-    elif pr_options:
+    elif pr_options or options.copy_ec:
         ordered_ecs = None
     else:
         print_msg("No easyconfigs left to be built.", log=_log, silent=testing)
